@@ -24,6 +24,7 @@ LIMIT 30;
 SELECT COUNT(*)
 FROM superstore_raw
 WHERE profit <0;
+--Spotted 1,098 negative losses. We'll flag them.
 
 
 --Does date make logical sense?
@@ -58,7 +59,7 @@ SELECT order_id, COUNT (*) AS occurences
 FROM superstore_raw
 GROUP BY order_id
 HAVING COUNT(*) > 1
-ORDER BY occurences DESC
+ORDER BY occurences DESC;
 
 --True Duplicates: Exact row appearing twice or more.
 SELECT order_id, customer_id, product_id,ship_date, COUNT (*) AS occurences
@@ -66,6 +67,7 @@ FROM superstore_raw
 GROUP BY order_id, customer_id, product_id, ship_date 
 HAVING COUNT(*) > 1
 ORDER BY occurences DESC;
+
 
 -- Show us the complete duplicate rows side by side
 -- We need to see ALL columns to confirm they're truly identical
@@ -79,6 +81,8 @@ IN (
     HAVING COUNT(*) > 1
 )
 ORDER BY order_id;
+--Noticed every single pair has different quantities, different sales amounts, and different profits. These are not copy-paste duplicates. They're the same product appearing twice in the same order — probably two separate purchases of the same item.
+--Spotted an impossible profit, and an encoding error in the product name.
 
 
 --Are names cased consistently?
@@ -87,3 +91,4 @@ ORDER BY order_id;
 SELECT DISTINCT customer_name, INITCAP(customer_name) AS what_initcap_suggests
 FROM superstore_raw
 WHERE customer_name != INITCAP(customer_name);
+--Spotted 8 naming issues
