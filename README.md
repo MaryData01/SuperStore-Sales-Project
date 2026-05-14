@@ -28,7 +28,7 @@ profitability and regional trends.
 
 ## Key Insights from the Dashboard
 - **West region** leads with $520K in total sales
-- **Technology** is the top category driving 41% of all sales
+- **Office Supplies** is the top category driving 41% of all sales.
 - **Sales grew consistently** from 2019 to 2022 showing healthy business growth
 - **18.6% of transactions** resulted in a loss — nearly 1 in 5 orders lost money
 
@@ -41,7 +41,7 @@ profitability and regional trends.
 | Superstore_Dashboard.pbix | Power BI dashboard file |
 | Superstore_Dashboard.pdf | Exported dashboard for quick viewing |
 
-## What I Learned
-This project taught me how to profile a real dataset from scratch,
-identify data quality issues systematically, write clean SQL transformations,
-and communicate business insights through a focused Power BI dashboard.
+## Takeaways
+Data doesn't lie, but it does hide things.
+This project was about digging through 5,901 rows,
+finding what was hidden, and letting the numbers tell their story.
