@@ -42,6 +42,4 @@ profitability and regional trends.
 | Superstore_Dashboard.pdf | Exported dashboard for quick viewing |
 
 ## Takeaways
-Data doesn't lie, but it does hide things.
-This project was about digging through 5,901 rows,
-finding what was hidden, and letting the numbers tell their story.
+The West region and Office Supplies category are the strongest performers. The business should investigate why 1 in 5 transactions result in a loss, particularly in the Furniture category.
